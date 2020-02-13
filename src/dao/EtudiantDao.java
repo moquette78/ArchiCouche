@@ -282,11 +282,11 @@ public Etudiant getEtudiantById(int id) {
 		statement = connection.createStatement();
 		
 		//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
-		String sql ="Select * FROM Etudiant WHERE id ='"+id+"'";
+		String sql ="Select * FROM Etudiant WHERE idEtu ='"+id+"'";
 		
 		// Etape 4 : Ex�cution requ�te
 		rs=statement.executeQuery(sql);
-		rs.next();
+		if(rs.next())
 		etudiant = new Etudiant(rs.getInt("IdEtu"),rs.getString("NomEtu"),rs.getString("PrenomEtu"),rs.getString("EmailEtu"));
 	}
 	catch (SQLException e)
