@@ -8,33 +8,58 @@ import metier.Etudiant;
 
 public class EtudiantService {
 
-	EtudiantDao etudiantDao;
+	//EtudiantDao etudiantDao = new EtudiantDao();
+	private EtudiantDao etudiantDao;
 	
+	/**
+	 * construction
+	 */
+	public EtudiantService() {
+		etudiantDao = new EtudiantDao();
+	}
+
+	/**
+	 * ajout etudiant
+	 * @param etudiant
+	 */
 	public void addEtudiant(Etudiant etudiant) {
 		
 		etudiantDao.insererEtudiant(etudiant);
 		
 	}
 	
+	public Etudiant getById(int id) {
+		return etudiantDao.getById();
+	}
+	
+	/**
+	 * update etudiant
+	 * @param id
+	 * @param email
+	 */
 	public void updateEtudiant(int id ,String email) {
 			
 			etudiantDao.modifierEtudiant(id,email);
 			
 		}
+	
+	/**
+	 * delete etudiant
+	 * @param id
+	 */
 
 	public void deleteEtudiant(int id ) {
 		
 		etudiantDao.supprimerEtudiant(id);
 		
 	}
-	public void getAllEtudiant() {
-		List<Etudiant> listEtudiant = etudiantDao.listerEtudiants();
-		for (Etudiant etudiant2 : listEtudiant) {
-			System.out.println(etudiant2.getNom() + " " + etudiant2.getPrenom()+ " " + etudiant2.getEmail());
-			
-		}
-		
-		
+	
+	/**
+	 * lister all etudiant
+	 */
+	public List<Etudiant> getAllEtudiant() {
+		return etudiantDao.listerEtudiants();
+	
 	}
 	
 	
