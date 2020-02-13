@@ -12,13 +12,17 @@ import metier.Etudiant;
 
 public class EtudiantDao {
 	
+	/**
+	 * inserer etudiant
+	 * @param etudiant
+	 */
 public void insererEtudiant( Etudiant etudiant) {
 	
 		
 		// Information d'acc�s � la base de donn�es
 		String url = "jdbc:mysql://localhost:8889/gestionecole";
 		String login = "root";
-		String password = "root";
+		String password = "";
 		int resultat;
 		
 		Connection connection = null;
@@ -27,7 +31,7 @@ public void insererEtudiant( Etudiant etudiant) {
 		try
 		{
 			// Etape 1 : Chargement du driver
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jc.jdbc.Driver");
 			
 			// Etape 2 : R�cup�ration de la connexion
 			connection = DriverManager.getConnection(url, login, password);
@@ -69,6 +73,11 @@ public void insererEtudiant( Etudiant etudiant) {
 		}
 	}
 	
+/**
+ * update etudiant
+ * @param id
+ * @param email
+ */
 
 public void modifierEtudiant(int id, String email ) {
 	
@@ -126,6 +135,11 @@ public void modifierEtudiant(int id, String email ) {
 			}
 	
 }
+
+/**
+ * delete etudiant
+ * @param id
+ */
 public void supprimerEtudiant(int id) {
 	
 	// Information d'acc�s � la base de donn�es
@@ -183,6 +197,10 @@ public void supprimerEtudiant(int id) {
 	
 }
 
+/**
+ * liste etudiant
+ * @return
+ */
 public List<Etudiant> listerEtudiants() {
 	
 	
