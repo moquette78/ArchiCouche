@@ -48,11 +48,11 @@ public void insererEtudiant( Etudiant etudiant) {
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println("Cet id est deja pris");
 		}
 		catch (ClassNotFoundException e)
 		{
-			e.printStackTrace();
+			System.out.println("Cet id est deja pris");
 		}
 		finally
 		{
@@ -238,5 +238,60 @@ public List<Etudiant> listerEtudiants() {
 		}
 	}
 	return listeEtu;
+}
+
+public Etudiant getEtudiantById(int id) {
+	// Information d'acc�s � la base de donn�es
+	String url = "jdbc:mysql://localhost:8889/gestionecole";
+	String login = "root";
+	String password = "root";
+	ResultSet rs=null;
+	List<Etudiant> listeEtu = new ArrayList<Etudiant>();
+	
+	Connection connection = null;
+	Statement statement = null;
+	Etudiant etudiant = null;
+	
+	try
+	{
+		// Etape 1 : Chargement du driver
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		// Etape 2 : R�cup�ration de la connexion
+		connection = DriverManager.getConnection(url, login, password);
+		
+		// Etape 3 : Cr�ation d'un statement
+		statement = connection.createStatement();
+		
+		//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
+		String sql ="Select * FROM Etudiant WHERE id ='"+id+"'";
+		
+		// Etape 4 : Ex�cution requ�te
+		rs=statement.executeQuery(sql);
+		rs.next();
+		etudiant = new Etudiant(rs.getInt("IdEtu"),rs.getString("NomEtu"),rs.getString("PrenomEtu"),rs.getString("EmailEtu"));
+	}
+	catch (SQLException e)
+	{
+		e.printStackTrace();
+	}
+	catch (ClassNotFoundException e)
+	{
+		e.printStackTrace();
+	}
+	finally
+	{
+		try
+		{
+			// Etape 5 : Lib�rer ressources de la m�moire
+			connection.close();
+			statement.close();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	return etudiant;
 }
 }
