@@ -64,6 +64,8 @@ public class Lanceur {
 			break ;
 		case 5:
 			System.exit(0);
+			System.out.println("Liste des �tudiants");
+			etudiantService.getAllEtudiant();
 			break ;
 
 		default:
