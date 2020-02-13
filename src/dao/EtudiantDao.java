@@ -70,7 +70,7 @@ public void insererEtudiant( Etudiant etudiant) {
 	}
 	
 
-public void modifierEtudiant(int id, Etudiant etudiant ) {
+public void modifierEtudiant(int id, String email ) {
 	
 	// Information d'acc�s � la base de donn�es
 			String url = "jdbc:mysql://localhost:8889/gestionecoleez";
@@ -92,7 +92,7 @@ public void modifierEtudiant(int id, Etudiant etudiant ) {
 				// Etape 3 : Cr�ation d'un statement
 				statement = connection.createStatement();
 				
-				String sql = "Update Etudiant Set EmailEtu= '"+etudiant.getEmail() +"'where id ='"+id+"'";
+				String sql = "Update Etudiant Set EmailEtu= '"+email +"'where id ='"+id+"'";
 				
 				// Etape 4 : Ex�cution requ�te
 				resultat= statement.executeUpdate(sql);
@@ -100,7 +100,7 @@ public void modifierEtudiant(int id, Etudiant etudiant ) {
 				if(resultat==0) {
 					System.out.println("Aucun etudiant ne possède cet id \n");
 				}else {
-					System.out.println("Nouvelle id mise a jour \n");
+					System.out.println("Nouvelle email mise a jour \n");
 				}
 			}
 			catch (SQLException e)
@@ -191,7 +191,7 @@ public List<Etudiant> listerEtudiants() {
 	String login = "root";
 	String password = "root";
 	ResultSet rs=null;
-	ArrayList<Etudiant> listeEtu = new ArrayList<Etudiant>();
+	List<Etudiant> listeEtu = new ArrayList<Etudiant>();
 	
 	Connection connection = null;
 	Statement statement = null;
