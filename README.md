@@ -16,5 +16,5 @@
  
  	✔ importer le fichier gestionecole.sql 
  
- 	✔ Exécuter le fichier Archi-Couche.jar ou la commande java -jar Archi-Couche.jar
+ 	✔ Exécuter le fichier ArchiCouche.jar ou la commande java -jar ArchiCouche.jar
 
