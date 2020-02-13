@@ -42,6 +42,7 @@ public class Lanceur {
 						System.out.println("Entrer le numero");
 						num = sc.nextInt();
 						etudiant = etudiantService.getById(num);
+						System.out.println("Cet étudiant n'existe pas dans la base");
 					} while (etudiant==null);
 					
 					System.out.println("Entrer l'email");
