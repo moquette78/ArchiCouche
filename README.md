@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# ArchiCouche
-=======
+
 						 ☞☞☞☞☞☞ ArchiCouche ☜☜☜☜☜☜
 
 
@@ -20,4 +18,3 @@
  
  	✔ Exécuter le fichier Archi-Couche.jar ou la commande java -jar Archi-Couche.jar
 
->>>>>>> 5f8eb58fedfeff0e96279996f8fbb89e92b7a388
