@@ -8,7 +8,7 @@ import metier.Etudiant;
 
 public class EtudiantService {
 
-	EtudiantDao etudiantDao;
+	EtudiantDao etudiantDao= new EtudiantDao();
 	
 	public void addEtudiant(Etudiant etudiant) {
 		

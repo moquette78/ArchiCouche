@@ -23,11 +23,11 @@ public class Lanceur {
 			System.out.println("Entrer le numero");
 			int numero = sc.nextInt();
 			System.out.println("Entrer le nom");
-			String nom = sc.nextLine();
+			String nom = sc.next();
 			System.out.println("Entrer le prenom");
-			String prenom = sc.nextLine();
+			String prenom = sc.next();
 			System.out.println("Entrer l'email");
-			String email = sc.nextLine();
+			String email = sc.next();
 			etudiant=new Etudiant(numero, nom, prenom, email);
 			etudiantService.addEtudiant(etudiant);
 			break ;
@@ -44,7 +44,7 @@ public class Lanceur {
 			etudiantService.deleteEtudiant(nume);
 			break ;
 		case 4:
-			System.out.println("Liste des étudiants");
+			System.out.println("Liste des ï¿½tudiants");
 			etudiantService.getAllEtudiant();
 			break ;
 

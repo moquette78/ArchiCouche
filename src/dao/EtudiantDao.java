@@ -35,7 +35,7 @@ public void insererEtudiant( Etudiant etudiant) {
 			// Etape 3 : Cr�ation d'un statement
 			statement = connection.createStatement();
 			
-			String sql ="INSERT INTO Etudiant " + "VALUES ('"+etudiant.getId()+"', "+etudiant.getNom()+"', "+etudiant.getPrenom()+"', "+etudiant.getEmail()+")";
+			String sql ="INSERT INTO Etudiant " + "VALUES ("+etudiant.getId()+", '"+etudiant.getNom()+"', '"+etudiant.getPrenom()+"', '"+etudiant.getEmail()+"')";
 			
 			// Etape 4 : Ex�cution requ�te
 			resultat= statement.executeUpdate(sql);
@@ -73,7 +73,7 @@ public void insererEtudiant( Etudiant etudiant) {
 public void modifierEtudiant(int id, String email ) {
 	
 	// Information d'acc�s � la base de donn�es
-			String url = "jdbc:mysql://localhost:8889/gestionecoleez";
+			String url = "jdbc:mysql://localhost:8889/gestionecole";
 			String login = "root";
 			String password = "root";
 			int resultat;
@@ -92,7 +92,7 @@ public void modifierEtudiant(int id, String email ) {
 				// Etape 3 : Cr�ation d'un statement
 				statement = connection.createStatement();
 				
-				String sql = "Update Etudiant Set EmailEtu= '"+email +"'where id ='"+id+"'";
+				String sql = "Update Etudiant Set EmailEtu= '"+email +"'where IdEtu ='"+id+"'";
 				
 				// Etape 4 : Ex�cution requ�te
 				resultat= statement.executeUpdate(sql);
