@@ -29,7 +29,7 @@ public class EtudiantService {
 	}
 	
 	public Etudiant getById(int id) {
-		return etudiantDao.getById();
+		return etudiantDao.getEtudiantById(id);
 	}
 	
 	/**
