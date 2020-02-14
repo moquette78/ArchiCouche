@@ -20,7 +20,7 @@ public class Lanceur {
 			System.out.println("5 - Quitter");
 			System.out.println("Veuillez entrer votrer choix");
 			 
-			 Etudiant etudiant;
+				Etudiant etudiant;
 				EtudiantService etudiantService=new EtudiantService();
 				
 				switch (sc.nextInt()) {

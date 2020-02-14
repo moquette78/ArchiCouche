@@ -20,7 +20,7 @@ public void insererEtudiant( Etudiant etudiant) {
 	
 		
 		// Information d'acc�s � la base de donn�es
-		String url = "jdbc:mysql://localhost:8889/gestionecole";
+		String url = "jdbc:mysql://localhost:3306/gestionecole";
 		String login = "root";
 		String password = "";
 		int resultat;
@@ -43,7 +43,7 @@ public void insererEtudiant( Etudiant etudiant) {
 			
 			// Etape 4 : Ex�cution requ�te
 			resultat= statement.executeUpdate(sql);
-			
+			System.out.println(resultat);
 			if(resultat==0) {
 				System.out.println("Erreur");
 			}else {
@@ -52,11 +52,11 @@ public void insererEtudiant( Etudiant etudiant) {
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Cet id est deja pris");
+			e.printStackTrace();
 		}
 		catch (ClassNotFoundException e)
 		{
-			System.out.println("Cet id est deja pris");
+			e.printStackTrace();
 		}
 		finally
 		{
@@ -205,9 +205,9 @@ public List<Etudiant> listerEtudiants() {
 	
 	
 	// Information d'acc�s � la base de donn�es
-	String url = "jdbc:mysql://localhost:8889/gestionecole";
+	String url = "jdbc:mysql://localhost:3306/gestionecole";
 	String login = "root";
-	String password = "root";
+	String password = "";
 	ResultSet rs=null;
 	List<Etudiant> listeEtu = new ArrayList<Etudiant>();
 	
@@ -260,9 +260,9 @@ public List<Etudiant> listerEtudiants() {
 
 public Etudiant getEtudiantById(int id) {
 	// Information d'acc�s � la base de donn�es
-	String url = "jdbc:mysql://localhost:8889/gestionecole";
+	String url = "jdbc:mysql://localhost:3306/gestionecole";
 	String login = "root";
-	String password = "root";
+	String password = "";
 	ResultSet rs=null;
 	List<Etudiant> listeEtu = new ArrayList<Etudiant>();
 	
