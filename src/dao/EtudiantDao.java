@@ -20,9 +20,9 @@ public void insererEtudiant( Etudiant etudiant) {
 	
 		
 		// Information d'acc�s � la base de donn�es
-		String url = "jdbc:mysql://localhost:3306/gestionecole";
+		String url = "jdbc:mysql://localhost:8889/gestionecole";
 		String login = "root";
-		String password = "";
+		String password = "root";
 		int resultat;
 		
 		Connection connection = null;
@@ -205,9 +205,9 @@ public List<Etudiant> listerEtudiants() {
 	
 	
 	// Information d'acc�s � la base de donn�es
-	String url = "jdbc:mysql://localhost:3306/gestionecole";
+	String url = "jdbc:mysql://localhost:8889/gestionecole";
 	String login = "root";
-	String password = "";
+	String password = "root";
 	ResultSet rs=null;
 	List<Etudiant> listeEtu = new ArrayList<Etudiant>();
 	
